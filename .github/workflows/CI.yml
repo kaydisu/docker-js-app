@@ -36,4 +36,4 @@ jobs:
       # 5. Run unit tests
       - name: Run unit tests
         run: npm test
-        working directory: ./app
+        working-directory: ./app
