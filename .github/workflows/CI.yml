@@ -25,13 +25,14 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('app/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       # 4. Install project dependencies
       - name: Install dependencies
         run: npm install
+        working-directory: ./app
 
       # 5. Run unit tests
       - name: Run unit tests
